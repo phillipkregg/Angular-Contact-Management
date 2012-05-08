@@ -1,6 +1,6 @@
 <h1>Listing contacts</h1>
 
-<table>
+<table class="table">
   <tr>
     <th>First name</th>
     <th>Last name</th>
@@ -40,4 +40,4 @@
 
 <br />
 
-<%= link_to 'New Contact', new_contact_path %>
+<%= button_to 'New Contact', new_contact_path, :method => :get, :class => "btn btn-primary" %>
