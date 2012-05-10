@@ -6,6 +6,7 @@
       <table class="table">
       	<thead>
       		<tr>
+      			<th>Id</th>
       			<th>First Name</th>
 	      		<th>Last Name</th>
 	      		<th>Phone Number</th>      			
@@ -13,7 +14,10 @@
       		
       	</thead>
       	<tbody>
-      		<tr ng-repeat="contact in contacts | orderBy:contactId">          
+      		<tr ng-repeat="contact in contacts">  
+      		 <td>
+      		 	{{contact.id}}
+      		 </td>        
 	          <td>
 	          	<a href="/#/contacts/{{contact.id}}">{{contact.first_name}}</a>
 	          </td>	 
@@ -27,6 +31,8 @@
       	</tbody>
         
       </table>
+      
+      {{contactId}}
  
     </div>
   </div>

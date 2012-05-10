@@ -1,6 +1,8 @@
 // main app javascript file
 
-angular.module('contactapp', ['contactListService']).
+'use strict';
+
+angular.module('contactapp', []).
   config(['$routeProvider', function($routeProvider) {
   $routeProvider.
       when('/contacts', {template: 'assets/app/partials/contact-list.html',   controller: ContactListCtrl}).

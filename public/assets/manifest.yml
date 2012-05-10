@@ -1,8 +1,0 @@
----
-rails.png: rails-be8732dac73d845ac5b142c8fb5f9fb0.png
-app/partials/contact-detail.html: app/partials/contact-detail-bf17eead18f9247cc0dfd65bd62f96c5.html
-app/partials/contact-list.html: app/partials/contact-list-e5e57ad5a55eaaa6b9059181821a7b00.html
-application.js: application-3212a0547d253861760a9edb1840d3bd.js
-application.css: application-a6e53a0482401ccdfe2af8c73a628de9.css
-glyphicons-halflings-white.png: glyphicons-halflings-white-ef3d5b8d6a297804352b4a46fdb5466d.png
-glyphicons-halflings.png: glyphicons-halflings-0e7ff93d8f48fe1f5f762e4312e78da7.png

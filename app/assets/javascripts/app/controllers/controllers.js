@@ -1,15 +1,20 @@
 // contacts controllers
 
+'use strict';
+
 function ContactListCtrl($scope, $http) {
   $http.get('/contacts').success(function(data) {
     $scope.contacts = data;
   });
+  
 }
 
-ContactListCtrl.$inject = ['$scope', '$http'];
+//ContactListCtrl.$inject = ['$scope', '$routeParams'];
 
-function ContactDetailCtrl($scope, $routeParams, Contact) {
-  $scope.contact = Contact.query({"contactId": contact.id});
+function ContactDetailCtrl($scope, $routeParams, $http) {
+  $http.get('contacts/' + $routeParams.contactId).success(function(data) {
+    $scope.contact = data;
+  });
 }
 
-ContactDetailCtrl.$inject = ['$scope', '$routeParams', 'Contact'];
+//ContactDetailCtrl.$inject = ['$scope', '$routeParams'];
