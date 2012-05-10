@@ -9,12 +9,12 @@ function ContactListCtrl($scope, $http) {
   
 }
 
-//ContactListCtrl.$inject = ['$scope', '$routeParams'];
+ContactListCtrl.$inject = ['$scope', '$http'];
 
 function ContactDetailCtrl($scope, $routeParams, $http) {
-  $http.get('contacts/' + $routeParams.contactId).success(function(data) {
+  $http.get('/contacts/' + $routeParams.contactId).success(function(data) {
     $scope.contact = data;
   });
 }
 
-//ContactDetailCtrl.$inject = ['$scope', '$routeParams'];
+ContactDetailCtrl.$inject = ['$scope', '$routeParams', '$http'];
