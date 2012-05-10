@@ -15,10 +15,10 @@
       	<tbody>
       		<tr ng-repeat="contact in contacts | orderBy:contactId">          
 	          <td>
-	          	<a href="contacts/{{contact.id}}">{{contact.first_name}}</a>
+	          	<a href="/#/contacts/{{contact.id}}">{{contact.first_name}}</a>
 	          </td>	 
 	          <td>
-	          	<a href="contacts/{{contact.id}}">{{contact.last_name}}</a>
+	          	<a href="/#/contacts/{{contact.id}}">{{contact.last_name}}</a>
 	          </td>	          
 	          <td>
 	          	{{contact.phone_num}}

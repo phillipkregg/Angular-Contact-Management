@@ -1,10 +1,12 @@
 // contacts controllers
 
-function ContactListCtrl($scope, Contact) {
-  $scope.contacts = Contact.query();  
+function ContactListCtrl($scope, $http) {
+  $http.get('/contacts').success(function(data) {
+    $scope.contacts = data;
+  });
 }
 
-ContactListCtrl.$inject = ['$scope', 'Contact'];
+ContactListCtrl.$inject = ['$scope', '$http'];
 
 function ContactDetailCtrl($scope, $routeParams, Contact) {
   $scope.contact = Contact.query({"contactId": contact.id});
