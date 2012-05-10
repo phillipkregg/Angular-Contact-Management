@@ -17,11 +17,5 @@
 //= require app/app
 //= require_tree ./app/controllers
 //= require angular/angular-resource
-
-
-
 //= require_tree ./app/partials
 
-$(document).ready(function(){
-
-});

@@ -7,6 +7,8 @@ function ContactListCtrl($scope, $http) {
     $scope.contacts = data;
   });
   
+  
+  
 }
 
 ContactListCtrl.$inject = ['$scope', '$http'];

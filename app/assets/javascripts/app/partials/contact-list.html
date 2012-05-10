@@ -3,7 +3,7 @@
     <div class="span10">
       <!--Body content-->
  
-      <table class="table">
+      <table id="contacts_table" class="table">
       	<thead>
       		<tr>
       			<th>Id</th>
@@ -15,22 +15,30 @@
       	</thead>
       	<tbody>
       		<tr ng-repeat="contact in contacts">  
+      		
       		 <td>
       		 	{{contact.id}}
       		 </td>        
 	          <td>
-	          	<a href="/#/contacts/{{contact.id}}">{{contact.first_name}}</a>
+	          	{{contact.first_name}}
 	          </td>	 
 	          <td>
-	          	<a href="/#/contacts/{{contact.id}}">{{contact.last_name}}</a>
+	          	{{contact.last_name}}
 	          </td>	          
 	          <td>
 	          	{{contact.phone_num}}
 	          </td>
-	        </tr>      		
+	          <td>
+	          	<a href="/#/contacts/{{contact.id}}" class="btn">View Details</a>
+	          </td>
+	             
+	        </tr>   
+	    		
       	</tbody>
         
       </table>
+      
+      
       
      
  
