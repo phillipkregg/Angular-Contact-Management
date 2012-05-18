@@ -13,8 +13,7 @@ var servicesModule = angular.module('contactapp');
 		
 		var ContactsService = $resource('/contacts/:contact_id', {}, {
 			'create'  : { method: 'POST' },
-			'index'   : { method: 'GET', isArray: true },
-			'show'    : { method: 'GET' },
+			'index'   : { method: 'GET', isArray: true },			
 			'update'  : { method: 'PUT' },
 			'destroy' : {method: 'DELETE' }
 		});
