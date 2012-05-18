@@ -1,0 +1,52 @@
+<div class="container-fluid">
+  
+    <div class="span10">
+    	<a href="/#/contacts/new" class="btn btn-large btn-primary" >
+    		<i class="icon-plus-sign icon-white"></i>
+    		Add New Contact
+    	</a> 
+    	
+      <!--Body content-->
+ 
+      <table id="contacts_table" class="table">
+      	<thead>
+      		<tr>
+      			<th>Id</th>
+      			<th>First Name</th>
+	      		<th>Last Name</th>
+	      		<th>Phone Number</th>      			
+      		</tr>
+      		
+      	</thead>
+      	<tbody>
+      		<tr ng-repeat="contact in contacts">  
+      		
+      		 <td>
+      		 	{{contact.id}}
+      		 </td>        
+	          <td>
+	          	{{contact.first_name}}
+	          </td>	 
+	          <td>
+	          	{{contact.last_name}}
+	          </td>	          
+	          <td>
+	          	{{contact.phone_num}}
+	          </td>
+	          <td>
+	          	<a href="/#/contacts/{{contact.id}}" class="btn">View Details</a>
+	          </td>
+	             
+	        </tr>   
+	    		
+      	</tbody>
+        
+      </table>    
+ 
+   </div>
+   
+   
+   
+</div>
+
+
