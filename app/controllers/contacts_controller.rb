@@ -2,7 +2,7 @@ class ContactsController < ApplicationController
   # GET /contacts
   # GET /contacts.json
   
-  skip_before_filter  :verify_authenticity_token
+  #skip_before_filter  :verify_authenticity_token
   
   def index
     @contacts = Contact.all
