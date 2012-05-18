@@ -8,5 +8,6 @@ angular.module('contactapp', ['ngResource']).
       when('/contacts', {template: 'assets/app/partials/contact-list.html', controller: ContactListCtrl}).
       when('/contacts/new', {template: 'assets/app/partials/new-contact.html', controller: ContactListCtrl}).
       when('/contacts/:contact_id', {template: 'assets/app/partials/contact-detail.html', controller: ContactDetailCtrl}).
-      otherwise({redirectTo: '/contacts'});
+      otherwise({redirectTo: '/contacts'});      
+      
 }]);

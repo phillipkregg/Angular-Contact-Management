@@ -20,3 +20,11 @@
 //= require_tree ./app/controllers
 //= require_tree ./app/partials
 
+$(document).ready(function() {
+	
+	
+	
+})
+
+
+

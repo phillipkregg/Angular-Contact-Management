@@ -9,7 +9,7 @@
 
 var servicesModule = angular.module('contactapp');
 
-	servicesModule.factory('Contacts', function($resource) {
+	servicesModule.factory('Contacts', function($resource) {		
 		
 		var ContactsService = $resource('/contacts/:contact_id', {}, {
 			'create'  : { method: 'POST' },

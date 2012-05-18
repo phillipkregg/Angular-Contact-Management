@@ -2,10 +2,9 @@
 
 'use strict';
 
-function ContactListCtrl($scope, $http, Contacts) {   
+function ContactListCtrl($scope, $http, Contacts) {  	
   
-  $scope.contacts = Contacts.index();  
-  
+  $scope.contacts = Contacts.index();    
   
   $("#test_btn").click(function() {
   	 alert($scope.newFirstName);
