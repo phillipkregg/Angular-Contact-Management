@@ -2,7 +2,7 @@
 
 'use strict';
 
-function ContactListCtrl($scope, $http, Contacts) {  	
+var ContactListCtrl = ['$scope', '$http', 'Contacts', function($scope, $http, Contacts) {  	
   
   $scope.contacts = Contacts.index();    
   
@@ -46,13 +46,13 @@ function ContactListCtrl($scope, $http, Contacts) {
 	    	})
 	    }
         
-};
+}];
 
-ContactListCtrl.$inject = ['$scope', '$http', 'Contacts'];
+//ContactListCtrl.$inject = ['$scope', '$http', 'Contacts'];
 
 
-function ContactDetailCtrl($scope, $routeParams, Contacts) {  
+var ContactDetailCtrl = ['$scope', '$routeParams', 'Contacts', function($scope, $routeParams, Contacts) {  
     $scope.contact = Contacts.get( {contact_id: $routeParams.contact_id} ); 
-}
+}];
 
-ContactDetailCtrl.$inject = ['$scope', '$routeParams', 'Contacts'];
+//ContactDetailCtrl.$inject = ['$scope', '$routeParams', 'Contacts'];
