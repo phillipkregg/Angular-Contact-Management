@@ -3,8 +3,11 @@
 		<h3>Add New Contact</h3>
 	</div>
 		<form id="contact_form" ng-submit="addContact()">
-			<input type="text" id="new_contact_first_name" name="newContactFirstName" ng-model="newFirstName" placeholder="First Name"></br>
-			<input type="text" id="new_contact_last_name" name="newContactLastName" ng-model="newLastName" placeholder="Last Name"></br>
+			<label>First Name</label>
+			<input type="text" id="new_contact_first_name" name="newContactFirstName" ng-model="newFirstName"></br>
+			<label>Last Name</label>
+			<input type="text" id="new_contact_last_name" name="newContactLastName" ng-model="newLastName" ></br>
+			<label>Salutation</label>
 			<select id="salutation" name="salutation" ng-model="newSalutation">
 				<option value="">Pick a Salutation</option>
 				<option value="mr">Mr</option>
@@ -15,16 +18,22 @@
 				<option value="space_cowboy">Space Cowboy</option>
 				<option value="gangster_of_love">Gangster of Love</option>
 			</select></br>
-			<input type="text" id="new_contact_phone" name="newContactPhone" ng-model="newPhoneNum" placeholder="Phone Number"></br>
+			<label>Phone Number</label>
+			<input type="text" id="new_contact_phone" name="newContactPhone" ng-model="newPhoneNum" ></br>
+			<label>Phone Type</label>
 			<select id="phone_type" name="state" ng-model="newPhoneType">
 				<option value="">Pick your Phone Type</option>
 				<option value="home">Home</option>
 				<option value="mobile">Mobile</option>
 				<option value="work">Work</option>
 			</select></br>
-			<input type="text" id="new_contact_address1" name="newContactAddress1" ng-model="newAddress1" placeholder="Address 1"></br>
-			<input type="text" id="new_contact_address2" name="newContactAddress2" ng-model="newAddress2" placeholder="Address 2"></br>
-			<input type="text" id="new_contact_city" name="newContactCity" ng-model="newCity" placeholder="City"></br>			
+			<label>Address 1</label>
+			<input type="text" id="new_contact_address1" name="newContactAddress1" ng-model="newAddress1" ></br>
+			<label>Address 2</label>
+			<input type="text" id="new_contact_address2" name="newContactAddress2" ng-model="newAddress2" ></br>
+			<label>City</label>
+			<input type="text" id="new_contact_city" name="newContactCity" ng-model="newCity" ></br>			
+			<label>State</label>
 			<select id="state" name="state" ng-model="newState">
 				<option value="">Pick your state</option>
 				<option value="AL">Alabama</option>
@@ -79,10 +88,12 @@
 				<option value="WI">Wisconsin</option>
 				<option value="WY">Wyoming</option>
 			</select></br>
-			<input type="text" id="new_contact_zipcode" name="newContactZipcode" ng-model="newZipcode" placeholder="Zip Code"></br>
-			<input type="text" id="new_contact_email" name="newContactEmail" ng-model="newEmail" placeholder="Email Address"></br>
+			<label>Zip Code</label>
+			<input type="text" id="new_contact_zipcode" name="newContactZipcode" ng-model="newZipcode" ></br>
+			<label>Email</label>
+			<input type="text" id="new_contact_email" name="newContactEmail" ng-model="newEmail" ></br>
 			<input type="button" id="contact_submit_btn" value="Add Contact" class="btn btn-primary">
-			<input type="button" id="test_btn" value="What's the value"/>
+			<a href="/#/contacts" class="btn">Cancel</a>
 		</form>
 		
 		
@@ -90,17 +101,12 @@
 </div>
 
 <script type="text/javascript">
-	$(document).ready(function(){
+	$(document).ready(function(){	
 		
-		
-		
-		//alert("loaded");
-		$("#contact_submit_btn").click(function(){
-			//alert("button clicked");
+		$("#contact_submit_btn").click(function(){			
 			$("#contact_form").submit();
-		});
 			
-	
+		});	
 		
 	});
 		

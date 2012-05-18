@@ -2,14 +2,9 @@
 
 'use strict';
 
-var ContactListCtrl = ['$scope', '$http', 'Contacts', function($scope, $http, Contacts) {  	
+var ContactListCtrl = ['$scope', '$http', '$location', 'Contacts', function($scope, $http, $location, Contacts) {  	
   
-  $scope.contacts = Contacts.index();    
-  
-  $("#test_btn").click(function() {
-  	 alert($scope.newFirstName);
-  });
-  
+  $scope.contacts = Contacts.index();     
     	    
   $scope.addContact = function() {
 		var newContact = {
@@ -43,6 +38,9 @@ var ContactListCtrl = ['$scope', '$http', 'Contacts', function($scope, $http, Co
 	 		$scope.newZipcode = "";
 	 		$scope.newZipcode = "";
 	 		$scope.newEmail = "";
+	 		
+	 		//redirect
+	 		$location.path('/#/contacts');
 	    	})
 	    }
         
