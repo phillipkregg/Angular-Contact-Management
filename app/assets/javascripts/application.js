@@ -12,6 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.dataTables.min.js
+//= require dt_bootstrap.js
 //= require bootstrap
 //= require angular/angular.js
 //= require app/app

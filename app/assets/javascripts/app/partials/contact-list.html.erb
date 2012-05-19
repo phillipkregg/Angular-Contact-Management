@@ -1,20 +1,22 @@
-<div class="container-fluid">
+
   
-    <div class="span10">
-    	<a href="/#/contacts/new" class="btn btn-large btn-primary" >
-    		<i class="icon-plus-sign icon-white"></i>
-    		Add New Contact
-    	</a> 
+    <div>    	
     	
       <!--Body content-->
  
-      <table id="contacts_table" class="table">
+      <table id="contacts_table" cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered">
       	<thead>
-      		<tr>
+      		<tr >
       			<th>Id</th>
       			<th>First Name</th>
 	      		<th>Last Name</th>
-	      		<th>Phone Number</th>      			
+	      		<th>Phone Number</th> 
+	      		<th>
+	      			<a href="/#/contacts/new" class="btn btn-large btn-primary pull-right" >
+				    		<i class="icon-plus-sign icon-white"></i>
+				    		Add New Contact
+				    	</a> 
+	      		</th>     			
       		</tr>
       		
       	</thead>
@@ -34,7 +36,7 @@
 	          	{{contact.phone_num}}
 	          </td>
 	          <td>
-	          	<a href="/#/contacts/{{contact.id}}" class="btn">View Details</a>
+	          	<a href="/#/contacts/{{contact.id}}" class="btn pull-right">View Details</a>
 	          </td>
 	             
 	        </tr>   
@@ -47,6 +49,6 @@
    
    
    
-</div>
+
 
 
