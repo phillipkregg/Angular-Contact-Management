@@ -2,7 +2,7 @@ class ContactsController < ApplicationController
   # GET /contacts
   # GET /contacts.json
   
-  #skip_before_filter  :verify_authenticity_token
+  skip_before_filter  :verify_authenticity_token
   
   def index
     @contacts = Contact.all
@@ -64,7 +64,7 @@ class ContactsController < ApplicationController
     respond_to do |format|
       if @contact.update_attributes(params[:contact])
         format.html { redirect_to @contact, notice: 'Contact was successfully updated.' }
-        format.json { head :no_content }
+        format.json { render json: @contact }
       else
         format.html { render action: "edit" }
         format.json { render json: @contact.errors, status: :unprocessable_entity }

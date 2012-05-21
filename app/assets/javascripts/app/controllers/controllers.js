@@ -2,7 +2,8 @@
 
 'use strict';
 
-var ContactListCtrl = ['$scope', '$http', '$location', 'Contacts', function($scope, $http, $location, Contacts) {  	
+
+function ContactListCtrl($scope, $http, $location, Contacts) {  	
   
   $scope.contacts = Contacts.index();     
     	    
@@ -42,15 +43,98 @@ var ContactListCtrl = ['$scope', '$http', '$location', 'Contacts', function($sco
 	 		//redirect
 	 		$location.path('/#/contacts');
 	    	})
-	    }
+    }
         
-}];
-
-//ContactListCtrl.$inject = ['$scope', '$http', 'Contacts'];
+};
 
 
-var ContactDetailCtrl = ['$scope', '$routeParams', 'Contacts', function($scope, $routeParams, Contacts) {  
-    $scope.contact = Contacts.get( {contact_id: $routeParams.contact_id} ); 
+
+
+ContactListCtrl.$inject = ['$scope', '$http', '$location', 'Contacts'];
+
+
+var ContactDetailCtrl = ['$scope', '$routeParams', '$location', '$http', '$filter', 'Contacts', function($scope, $routeParams, $location, $http, $filter, Contacts) {  
+   
+   $scope.contact = Contacts.get( {contact_id: $routeParams.contact_id} ); 
+     
+   $scope.saveContact = function() {
+   	
+   	alert("Save clicked");
+   	
+   	var updatedContact = {
+			
+			first_name: $scope.newFirstName,
+			last_name: $scope.newLastName,
+			salutation: $scope.newSalutation,
+			phone_num: $scope.newPhoneNum,
+			phone_num_type: $scope.newPhoneType,
+			address1: $scope.newAddress1,
+			address2: $scope.newAddress2,
+			email_address: $scope.newEmail,
+			city: $scope.newCity,
+			state: $scope.newState,
+			zip: $scope.newZipcode
+		};		
+		
+   	
+   	$.ajax({
+   		url: "/contacts/" + $routeParams.contact_id,
+   		dataType: "json",
+   		type: "POST",
+   		processData: false,
+   		contentType: "application/json",
+   		data: "{\"contact\"" + ":" + 
+   			"{" +
+   			
+   			"\"first_name\"" + ":" + JSON.stringify($("#edit_contact_first_name").val()) + "," +
+   			"\"last_name\"" + ":" + JSON.stringify($("#edit_contact_last_name").val()) + "," +
+   			"\"salutation\"" + ":" + JSON.stringify($("#edit_salutation").val()) + "," +
+   			"\"phone_num\"" + ":" + JSON.stringify($("#edit_contact_phone").val()) + "," +
+   			"\"phone_num_type\"" + ":" + JSON.stringify($("#phone_type").val()) + "," +
+   			"\"address1\"" + ":" + JSON.stringify($("#edit_contact_address1").val()) + "," +
+   			"\"address2\"" + ":" + JSON.stringify($("#edit_contact_address2").val()) + "," +
+   			"\"email_address\"" + ":" + JSON.stringify($("#edit_contact_email").val()) + "," +
+   			"\"city\"" + ":" + JSON.stringify($("#edit_contact_city").val()) + "," +
+   			"\"state\"" + ":" + JSON.stringify($("#edit_state").val()) + "," +
+   			"\"zip\"" + ":" + JSON.stringify($("#edit_contact_zipcode").val()) + "" +
+   			
+   			"}}" ,
+   		//data: "{\"contact\":{\"first_name\":\"Taco\"}}",
+	   	beforeSend: function(xhr) 
+	   	{
+				xhr.setRequestHeader("X-Http-Method-Override", "PUT");
+			}
+   	})
+   }
+   
+
+	// $scope.saveContact = function() {		
+// 		
+		// var updatedContact = {
+// 			
+			// first_name: $scope.newFirstName,
+			// last_name: $scope.newLastName,
+			// salutation: $scope.newSalutation,
+			// phone_num: $scope.newPhoneNum,
+			// phone_num_type: $scope.newPhoneType,
+			// address1: $scope.newAddress1,
+			// address2: $scope.newAddress2,
+			// email_address: $scope.newEmail,
+			// city: $scope.newCity,
+			// state: $scope.newState,
+			// zip: $scope.newZipcode
+		// };		
+// 		
+		
+		
+		//$scope.contact.$update( updatedContact );
+			
+
+		//redirect
+ 		//$location.path('/#/contacts');
+	//}
+
+
 }];
 
 //ContactDetailCtrl.$inject = ['$scope', '$routeParams', 'Contacts'];

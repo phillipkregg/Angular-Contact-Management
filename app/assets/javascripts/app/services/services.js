@@ -11,7 +11,7 @@ var servicesModule = angular.module('contactapp');
 
 	servicesModule.factory('Contacts', function($resource) {		
 		
-		var ContactsService = $resource('/contacts/:contact_id', {}, {
+		var ContactsService = $resource('/contacts/:contact_id', {contact_id: '@id'}, {
 			'create'  : { method: 'POST' },
 			'index'   : { method: 'GET', isArray: true },			
 			'update'  : { method: 'PUT' },
