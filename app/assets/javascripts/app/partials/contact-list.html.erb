@@ -11,6 +11,9 @@
       			<th>First Name</th>
 	      		<th>Last Name</th>
 	      		<th>Phone Number</th> 
+	      		<th></th>
+	      		<th></th>
+	      		<th></th>
 	      		<th>
 	      			<a href="/#/contacts/new" class="btn btn-large btn-primary pull-right" >
 				    		<i class="icon-plus-sign icon-white"></i>
@@ -36,12 +39,24 @@
 	          	{{contact.phone_num}}
 	          </td>
 	          <td>
-	          	<a href="/#/contacts/edit/{{contact.id}}" class="btn pull-right">Edit Contact</a>
+	          	<a href="/#/contacts/edit/{{contact.id}}" class="btn pull-right">
+	          		<i class="icon-edit"></i>
+	          		Edit Contact	          		
+	          	</a>
+	          </td>
+	          <td id="detailCell">
+	          	<a id="detailButton" href="/#/contacts/{{contact.id}}" class="btn pull-right">
+	          		<i class="icon-folder-open"></i>
+	          		View Details
+	          	</a>
 	          </td>
 	          <td>
-	          	<a href="/#/contacts/{{contact.id}}" class="btn pull-right">View Details</a>
+	          	<a id="contactToDelete" ng-click="getContact()" data-toggle="modal" href="#deleteModal" class="btn btn-danger pull-right">
+	          		<i class="icon-trash icon-white"></i>
+	          		Delete Contact
+	          	</a>
 	          </td>
-	             
+	          	             
 	        </tr>   
 	    		
       	</tbody>
@@ -49,9 +64,21 @@
       </table>    
  
    </div>
+      
+   <div class="modal hide fade in" id="deleteModal">
+	  <div class="modal-header">
+	    <button class="close" data-dismiss="modal">×</button>
+	    <h3>Modal header</h3>
+	  </div>
+	  <div class="modal-body">
+	    <p>Are you sure you want to delete {{contact.first_name}} {{contact.last_name}}?</p>
+	  </div>
+	  <div class="modal-footer">
+	    <a href="#" data-dismiss="modal" class="btn">Close</a>
+	    <a href="#" ng-click="removeContact()" class="btn btn-danger">Delete Contact</a>
+	  </div>
+	</div>
    
    
    
-
-
 

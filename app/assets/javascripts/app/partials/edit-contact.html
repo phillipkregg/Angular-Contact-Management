@@ -89,11 +89,17 @@
 				<option value="WY">Wyoming</option>
 			</select></br>
 			<label>Zip Code</label>
-			<input type="text" id="edit_contact_zipcode" name="newContactZipcode" value="{{contact.zip}}" ng-model="newZipcode" ></br>
+			<input type="text" id="edit_contact_zipcode" name="newContactZipcode" value="{{contact.zip}}" ng-model="newZipcode" /></br>
 			<label>Email</label>
-			<input type="text" id="edit_contact_email" name="newContactEmail" value="{{contact.email_address}}" ng-model="newEmail" ></br>
-			<input type="button" id="contact_submit_btn" value="Update Contact" ng-click="saveContact()" class="btn btn-primary">
-			<a href="/#/contacts" class="btn">Cancel</a>
+			<input type="text" id="edit_contact_email" name="newContactEmail" value="{{contact.email_address}}" ng-model="newEmail" /></br>
+			<a type="button" id="contact_submit_btn" value="Update Contact" ng-click="saveContact()" class="btn btn-primary">
+				<i class="icon-check icon-white"></i>
+				Save Changes				
+			</a>
+			<a href="/#/contacts" class="btn">
+				
+				Cancel
+			</a>
 		</form>
 		
 		

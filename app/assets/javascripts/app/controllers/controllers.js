@@ -3,7 +3,7 @@
 'use strict';
 
 
-function ContactListCtrl($scope, $http, $location, Contacts) {  	
+function ContactListCtrl($scope, $http, $location, $routeParams, Contacts) {  	
   
   $scope.contacts = Contacts.index();     
     	    
@@ -44,17 +44,49 @@ function ContactListCtrl($scope, $http, $location, Contacts) {
 	 		$location.path('/#/contacts');
 	    	})
     }
+       
+  
+  
+  $scope.contact = "";
+      
+ 	$scope.getContact = function() { 		
+ 		 
+	   $scope.contact = this.contact;	   
+	   
+	   alert($scope.contact.first_name);
+ 		
+ 		//alert("clicked");
+ 		
+ 		//console.log($(this))
+ 		
+ 		//alert($(this).parent("#detailCell").siblings().children("a #detailButton").attr("href"))
+ 		
+ 		//$("#contacts_table tbody tr").each(function() {
+ 			//alert($(this).find("#detailButton").attr("href"));
+ 		//})
+ 		//console.log($(this).parent().find("#detailButton").attr("href"));
+ 	}
+    	
+    
+    
+    $scope.removeContact = function() {
+    	  //alert($(this).siblings("#detailButton").attr("href"));
+    	  //$scope.contact = Contacts.get( {contact_id: this.$("#contactToDelete")} ); 
+        $scope.contact.$destroy();
+        $('#deleteModal').modal('hide')
+       };
         
 };
 
 
 
 
-ContactListCtrl.$inject = ['$scope', '$http', '$location', 'Contacts'];
+ContactListCtrl.$inject = ['$scope', '$http', '$location', '$routeParams', 'Contacts'];
 
 
 var ContactDetailCtrl = ['$scope', '$routeParams', '$location', '$http', '$filter', 'Contacts', function($scope, $routeParams, $location, $http, $filter, Contacts) {  
    
+     
    $scope.contact = Contacts.get( {contact_id: $routeParams.contact_id} ); 
      
    $scope.saveContact = function() {
@@ -106,6 +138,9 @@ var ContactDetailCtrl = ['$scope', '$routeParams', '$location', '$http', '$filte
 			}
    	})
    }
+   
+   
+   
    
 
 	// $scope.saveContact = function() {		

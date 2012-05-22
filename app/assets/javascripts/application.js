@@ -23,6 +23,12 @@
 //= require_tree ./app/partials
 
 
-
+$(document).ready(function() {
+	//$('#deleteModal').modal();
+	
+	
+	
+	
+});
 
 
