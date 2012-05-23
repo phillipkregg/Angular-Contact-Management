@@ -52,9 +52,7 @@ function ContactListCtrl($scope, $http, $location, $routeParams, Contacts) {
  	$scope.getContact = function() { 		
  		 
 	   $scope.contact = this.contact;	   
-	   
-	   alert($scope.contact.first_name);
- 		
+	    		
  		//alert("clicked");
  		
  		//console.log($(this))
