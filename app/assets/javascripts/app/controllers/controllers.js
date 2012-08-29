@@ -89,7 +89,6 @@ var ContactDetailCtrl = ['$scope', '$routeParams', '$location', '$http', '$filte
      
    $scope.saveContact = function() {
    	
-   	alert("Save clicked");
    	
    	var updatedContact = {
 			
@@ -134,7 +133,10 @@ var ContactDetailCtrl = ['$scope', '$routeParams', '$location', '$http', '$filte
 	   	{
 				xhr.setRequestHeader("X-Http-Method-Override", "PUT");
 			}
-   	})
+   	});
+	
+	alert("Contact Saved!");
+
    }
    
    
